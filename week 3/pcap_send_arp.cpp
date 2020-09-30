@@ -112,10 +112,8 @@ int main(int argc, char **argv)
 
     memcpy(packet + 14, &arp, sizeof(struct arp));
 
-    int size = sizeof(struct arp) + 14;
-
     /* Send down the packet */
-    if (pcap_sendpacket(fp, packet, size) != 0)
+    if (pcap_sendpacket(fp, packet, sizeof(struct arp) + 14) != 0)
     {
         fprintf(stderr,"\nError sending the packet: \n", pcap_geterr(fp));
         return -1;
