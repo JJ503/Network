@@ -29,7 +29,7 @@ int main(int argc,char * argv[]){
     if(handle==nullptr){
         fprintf(stderr, "pcap_open_live(%s) return nullptr - $s\n",dev,errbuf);
     }
-    
+     
     while(true){
         struct pcap_pkthdr* header;
         const u_char* packet;
