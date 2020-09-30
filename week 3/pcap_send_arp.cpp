@@ -29,7 +29,7 @@ int main(int argc, char **argv)
         printf("usage: %s interface (e.g. 'rpcap://eth0')", argv[0]);
         return -1;
     }
-    
+     
     /* Open the output device */
     if ( (fp= pcap_open_live(argv[1],            // name of the device
                         100,                // portion of the packet to capture (only the first 100 bytes)
